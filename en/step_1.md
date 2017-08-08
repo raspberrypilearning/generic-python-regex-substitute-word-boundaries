@@ -17,7 +17,7 @@
 
 - Here you can use the **metacharacter** `\b` which means **word boundary**. So instead of searching for the `ed` pattern, you search for the `ed\b` pattern, which means only when it is at then end of a word.
 
-- Because you are now putting the `\` which is an escape character, into your string, you need to tell Python to treat it as a **string literal**, to avoid behaviour. This just means putting an `r` before the quotes - `r'ed\b'
+- Because you are now putting the `\` which is an escape character, into your string, you need to tell Python to treat it as a **string literal**, to avoid odd behaviour. This just means putting an `r` before the quotes - `r'ed\b'
 
 - This will now work:
 
