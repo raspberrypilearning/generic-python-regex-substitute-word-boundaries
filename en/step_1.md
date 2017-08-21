@@ -13,7 +13,7 @@ There are three basic ways of using word boundaries in a regex substitution:
 	word = re.sub('ed', 'ing', 'walked')
 	```
 
-- This would not work with the word `'edited'` though. All the `'ed'` patterns would be replace with `'ing'` to give `'ingiting'`. However, the only `'ed'` that you want to replace is the one at the end.
+- This would not work with the word `'edited'` though. All the `'ed'` patterns would be replaced with `'ing'` to give `'ingiting'`. However, the only `'ed'` that you want to replace is the one at the end.
 
 - In such cases you can use the **metacharacter** `\b` which means **word boundary**. So instead of searching for the `'ed'` pattern, you search for the `'ed\b'` pattern. This will tell Python to only substitute the pattern at the end of a word.
 
