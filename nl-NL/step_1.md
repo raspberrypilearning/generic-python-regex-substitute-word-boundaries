@@ -1,50 +1,50 @@
-There are three basic ways of using word boundaries in a regex substitution:
+Er zijn drie basismanieren om woordgrenzen te gebruiken in een regexvervanging:
 
-  1. changing the end of words
-  1. changing the beginning of words
-  1. changing whole words only.
+  1. het einde van woorden veranderen
+  1. het begin van woorden veranderen
+  1. alleen hele woorden veranderen.
 
-### Changing the ends of words
+### De uiteinden van woorden wijzigen
 
-- If you wanted to change the word `'walked'` to `'walking'`, then a standard regex substitution would work. You could just replace `'ed'` with `'ing'`.
+- Als je het woord `'gelopen'` tot `'gelopen'`wilde veranderen, zou een standaard regexvervanging werken. Je zou `'ed'` kunnen vervangen door `'ing'`.
 
     ```python
     import re
-    word = re.sub('ed', 'ing', 'walked')
+    word = re.sub ('ed', 'ing', 'walk')
     ```
 
-- This would not work with the word `'edited'` though. All the `'ed'` patterns would be replaced with `'ing'` to give `'ingiting'`. However, the only `'ed'` that you want to replace is the one at the end.
+- Dit zou echter niet werken met het woord `'bewerkt'`. Alle `'ed'` patronen zouden worden vervangen door `'ing'` om `'ingiting'`. De enige `'ed'` die u wilt vervangen, is echter die aan het einde.
 
-- In such cases you can use the **metacharacter** `\b` which means **word boundary**. So instead of searching for the `'ed'` pattern, you search for the `'ed\b'` pattern. This will tell Python to only substitute the pattern at the end of a word.
+- In dergelijke gevallen kunt u het **metateken** `\ b` wat **woordgrens betekent**. Dus in plaats van te zoeken naar het `'ed'` patroon, zoekt u naar het `'ed \ b'` patroon. Dit zal Python vertellen om het patroon alleen aan het einde van een woord te vervangen.
 
-- You are now using the ``\`, which is an **escape character**, into your string. Therefore, you need to tell Python to treat it as a **string literal** to avoid odd behaviour. This just means putting an``r`before the quote marks:`r'ed\b'`
+- Je gebruikt nu de ``\ `, wat een ** escape-teken ** is, in je string. Daarom moet je Python vertellen het te behandelen als een ** letterlijke tekenreeks ** om vreemd gedrag te voorkomen. Dit betekent gewoon dat u een``r`voor de aanhalingstekens plaatst:`r'ed \ b'`
 
-- Put all of this together in a working line of code like this:
+- Zet dit allemaal samen in een werkende coderegel als volgt:
 
     ```python
     import re
-    word = re.sub(r'ed\b', 'ing', 'edited')
+    word = re.sub (r'ed \ b ',' ing ',' edited ')
     ```
 
-### Changing the beginnings of words
+### Het begin van woorden veranderen
 
-- The same system can be used to detect when a pattern is at the beginning of a word. So to change `'unstrung'` to `'restrung'` rather than `'restrreg'`you could do the following:
+- Hetzelfde systeem kan worden gebruikt om te detecteren wanneer een patroon aan het begin van een woord staat. Dus om `'onbespannen'` in `'restrung'` plaats van `'restrreg'`zou je het volgende kunnen doen:
 
     ```python
     import re
-    word = re.sub(r'\bun', 're', 'unstrung')
+    word = re.sub (r '\ bun', 're', 'unstrung')
     ```
 
-- Using the `\b` at the beginning of the pattern makes Python check that the pattern is at the start of the word.
+- Door de `\ b` aan het begin van het patroon te gebruiken, controleert Python of het patroon aan het begin van het woord staat.
 
-### Changing whole words
+### Hele woorden veranderen
 
-- To change a whole word, simply use the `\b` metacharacter at the start and end of the pattern.
+- Als u een heel woord wilt wijzigen, gebruikt u eenvoudig het metateken `\ b` aan het begin en einde van het patroon.
 
-- So to change `'The man managed the team'` to `'The woman managed the team'`, you would do the following:
+- Dus om `te veranderen 'De man beheerde het team'` tot `'De vrouw beheerde het team'`, zou je het volgende doen:
 
     ```python
     import re
-    sentence = 'The man managed the team'
-    sentence = re.sub(r'\bman\b', 'woman', sentence)
+    zin = 'De man beheerde het team'
+    zin = re.sub (r '\ bman \ b', 'woman', zin)
     ```
