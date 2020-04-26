@@ -1,0 +1,17 @@
+---
+title: Vervang woordgrenzen door regexpatronen in Python
+hero_image: images/banner.png
+description: Gebruik woordgrenzen in regexvervangingen
+original_url:
+theme: red #possible values: blue, green, navy, orange, red, turquoise, violet, yellow
+duration: 1
+listed: false
+ingredient: true
+copyedit: true
+curriculum:
+interests:
+technologies: "regex, python"
+site_areas:
+steps:
+  - title: Woordgrenzen
+
