@@ -17,7 +17,7 @@ Hay tres formas básicas de usar límites de palabras en una sustitución de reg
 
 - En tales casos puedes usar el **meta carácter** `\b` que significa **límite de palabra**. Así que, en lugar de buscar el patrón `'r'`, buscas el patrón `'r\b'`. Esto le dirá a Python que sólo sustituya el patrón al final de una palabra.
 
-- Ahora estás usando el `\`, que es un **carácter de escape**, en tu cadena. Por lo tanto, necesitas decirle a Python que lo trate como un **literal de cadena** para evitar comportamientos extraños. Esto simplemente significa poner una ``r` antes de las comillas: `r'r\b'`
+- Ahora estás usando el `\`, que es un **carácter de escape**, en tu cadena. Por lo tanto, necesitas decirle a Python que lo trate como un **literal de cadena** para evitar comportamientos extraños. Esto simplemente significa poner una `r` antes de las comillas: `r'r\b'`
 
 - Coloca todo esto junto en una línea de código funcional como este:
 
